@@ -15,6 +15,7 @@ export class NewTrainingComponent implements OnInit {
 
   onStartTraining() {
     this.trainingStart.emit();
+    console.log("Angular fire")
   }
 
 }
