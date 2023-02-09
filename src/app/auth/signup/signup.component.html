@@ -22,7 +22,7 @@
             Agree Terms & Conditions
         </mat-checkbox>
 
-        <button class="submitButton" type="submit" mat-raised-button color="primary"
-            disabled="f.form.invalid">Sign Up</button>
+        <button class="submitButton" type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Sign
+            Up</button>
     </form>
 </section>

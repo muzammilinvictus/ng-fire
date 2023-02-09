@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { AuthService } from '../auth.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   maxDate: any;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.maxDate = new Date();
@@ -29,5 +30,6 @@ export class SignupComponent implements OnInit {
 
   onSubmit(form: NgForm){
     console.log("Form", form);
+    this.authService.registerUser(form.value);
   }
 }

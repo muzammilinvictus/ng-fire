@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { TrainingService } from '../training.service';
 import { SnackBarComponent } from './snackbar.component';
 import { StopTrainingComponent } from './stop-training.component';
 
@@ -16,7 +17,7 @@ export class CurrentTrainingComponent implements OnInit {
   durationInSeconds = 2;
   timer: any = 0;
 
-  constructor(private dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router) {}
+  constructor(private dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router, private trainingService: TrainingService) {}
 
   ngOnInit() {
     this.startOrResumeTimer();
