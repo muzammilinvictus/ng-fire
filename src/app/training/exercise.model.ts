@@ -3,6 +3,6 @@ export class Exercise{
     name?: string;
     duration?: number;
     calories?: number;
-    date?: string;
+    date?: Date;
     state?: 'completed' | 'cancelled' | null;
 }
